@@ -1,0 +1,16 @@
+program = {line} ;
+
+line = (command | comment | white space), "\n" ;
+
+command = state, white space, surroundings, white space, '->', white space,
+		  direction, white space, state, [white space | comment] ;
+
+state = digit, [digit] ;
+digit = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+
+white space = ? white space characters ? ;
+surroundings = "N" | "x" | "*", "E" | "x" | "*", "W" | "x" | "*", 
+			   "S" | "x" | "*" ;
+direction = "N" | "E" | "W" | "S" ;
+
+comment = [{white space}], '#', ? all characters - "\n" ? ;
