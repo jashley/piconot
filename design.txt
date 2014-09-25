@@ -1,0 +1,45 @@
+Who is the target for this design, e.g., are you assuming any knowledge on the
+part of the language users?
+
+We are assuming the user is vaguely familiar with the concept of machine language.
+This is a unique way of designing a picobot program, harking back to the early
+days of computer science, only a small step beyond byte code. 
+
+Why did you choose this design, i.e., why did you think it would be a good idea
+for users to express the maze-searching computation using this syntax?
+
+The way Picobot seems to work is by moving new values into variables and running
+based on what is in said variables. It seemed to map nicely into the machine
+language paradigm. For example, instead of variables, we move data into "registers".
+This is not particularly designed with "maze-solving" in mind, but it is no less
+suited than original Picobot syntax 
+
+What behaviors are easier to express in your design than in Picobot’s original
+design?  If there are no such behaviors, why not?
+
+The biggest save is in wild cards. Our implementation performs four checks, one
+for each direction, moving on only if all checks succeeds. Because of this, if
+you have an asterisk, you need not perform the check, as it immediately succeeds.
+Thus, you need not write code for that check.
+
+What behaviors are more difficult to express in your design than in Picobot’s
+original design? If there are no such behaviors, why not?
+
+Writing checking is much harder. You are required to write out four separate checks
+for every rule you add to the code. You must also hard code a jump back in the code
+once Picobot moves. Also, for new users, the learning curve is much steeper, as we
+tried to add as much assembly as possible.
+
+On a scale of 1–10 (where 10 is “very different”), how different is your syntax
+from PicoBot’s original design?
+
+7. We think it is quite different because of the assemblyness and the difficulty to
+perform common tasks (as previously mentioned). However, there are parallels to
+original Picobot, in its blocks of text for each rule in a repeating structure.
+
+Is there anything you don’t like about your design?
+
+The version of "assembly" we implemented does not involve very many rules. In that
+sense, it is not much like true assembly code, which is a little disappointing.
+However, Picobot is a very simple program, meaning the language we come up with
+should be expected to be "simple" as well. It is still disappointing, though.
