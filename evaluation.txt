@@ -1,0 +1,9 @@
+Right off the bat, we decided to remove line numbers from the start of our lines.
+
+We have also decided to drop off commas, as we can do our instructions more
+easily with classes. 
+
+We have decided to use hex values for the user to input, as 
+Scala does not play nicely with binary literals. 
+
+Screw it, we're going hex all the way. The user will encode everything in hex.
